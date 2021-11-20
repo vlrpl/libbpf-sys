@@ -12,7 +12,7 @@ fn main() {
     let src_dir = path::PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap());
     let out_dir = path::PathBuf::from(env::var_os("OUT_DIR").unwrap());
 
-    if !cfg!(target_os = "linux") {
+    if env::var("CARGO_CFG_TARGET_OS").unwrap() != "linux" {
         panic!(
             "cannot compile libbpf-sys on {}",
             env::var("CARGO_CFG_TARGET_OS").unwrap()
