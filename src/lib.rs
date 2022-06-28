@@ -16,15 +16,16 @@ macro_rules! header {
 ///
 /// Tuple format is: (header filename, header contents)
 #[cfg(not(feature = "novendor"))]
-pub const API_HEADERS: [(&'static str, &'static str); 10] = [
+pub const API_HEADERS: [(&'static str, &'static str); 11] = [
     header!("bpf.h"),
-    header!("libbpf.h"),
-    header!("btf.h"),
-    header!("xsk.h"),
+    header!("bpf_core_read.h"),
+    header!("bpf_endian.h"),
     header!("bpf_helpers.h"),
     header!("bpf_helper_defs.h"),
     header!("bpf_tracing.h"),
-    header!("bpf_endian.h"),
-    header!("bpf_core_read.h"),
+    header!("btf.h"),
+    header!("libbpf.h"),
     header!("libbpf_common.h"),
+    header!("usdt.bpf.h"),
+    header!("xsk.h"),
 ];
